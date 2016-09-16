@@ -1,6 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+def plot_image(img, figsize=(4,4)):
+    fig = plt.figure(figsize=figsize)
+    plt.imshow(img)
+    plt.show()
+
 def plot_iterations(df, xindex, yindex, figsize=(8,12),
                     fxns=[np.real, np.imag, np.abs, np.angle],
                     cols=['blue', 'red', 'green', 'purple'],
