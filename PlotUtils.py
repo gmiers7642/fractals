@@ -12,8 +12,14 @@ def plot_iterations(df, xindex, yindex, figsize=(8,12),
                     fxn_names=['real', 'imag', 'abs', 'arg']):
     fig = plt.figure(figsize=(12,8))
     for pair in zip(fxns, cols):
-        colName = 'Z.' + str(yindex) + '_' + str(xindex)
-        plt.plot(df.index[2:] - 2, df[colName].iloc[2:].apply(pair[0]),
+        colName = 'Z.' + str(xindex) + '_' + str(yindex)
+        plt.plot(df.index, df[colName].apply(pair[0]),
                  c=pair[1], marker='o')
     plt.legend(fxn_names)
+    plt.show()
+
+def plot_orbit(df, xindex, yindex):
+    colName = 'Z.' + str(xindex) + '_' + str(yindex)
+    fig = plt.figure(figsize=(4,4))
+    plt.plot(df[colName].apply(np.real), df[colName].apply(np.imag))
     plt.show()
