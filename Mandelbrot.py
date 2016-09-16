@@ -68,3 +68,12 @@ class Mandelbrot(object):
     @property
     def image(self):
         return self._image
+
+    def params(self):
+        return {'Xmin':self.Xmin,
+                'Xmax':self.Xmax,
+                'Ymin':self.Ymin,
+                'Ymax':self.Ymax,
+                'maxIter':self.maxIter,
+                'maxRad':self.maxRad,
+                'gridSpc':self.gridSpc}
